@@ -20,12 +20,8 @@ def search_result():
 
 
 if __name__ == '__main__':
-<<<<<<< Updated upstream
     app.run()
 
 
 
 
-=======
-    app.run()
->>>>>>> Stashed changes
