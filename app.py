@@ -7,11 +7,6 @@ from flask import *
 
 app = Flask(__name__)
 
-
-r = requests.get('https://translator-osu.herokuapp.com/translate-to?text=hello&language=French')
-print(r.text)
-print(r.status_code)
-
 @app.route('/')
 def search_input():
     return render_template('index.html')
