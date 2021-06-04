@@ -11,7 +11,7 @@ app = Flask(__name__)
 def search_input():
     return render_template('index.html')
 
-
+# This route is used to search the Wiki API and display content to front-end.
 @app.route('/', methods=['POST', 'GET'])
 def search_result():
     text = request.form['text']
