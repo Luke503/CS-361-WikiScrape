@@ -7,6 +7,7 @@ from flask import *
 
 app = Flask(__name__)
 
+# Render main page template.
 @app.route('/')
 def search_input():
     return render_template('index.html')
@@ -23,7 +24,7 @@ def search_result():
     response = requests.get(url)
     return render_template("index.html", result=result, response=response.text)
 
-
+# This route is utilized to allow Jacob to make a GET request to my service in his app.
 @app.route('/scrape', methods=['POST', 'GET'])
 def scrape_info():
     take = request.args.get('take')
@@ -31,8 +32,6 @@ def scrape_info():
     first_article = search[0]
     summary = wikipedia.summary(first_article, sentences=10)
     return (summary)
-
-
 
 
 if __name__ == '__main__':
